@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         DB::unprepared('
-        CREATE TRIGGER calcular_valor_pagar BEFORE INSERT ON comprobante FOR EACH ROW
+        CREATE TRIGGER calcular_valor_pagar BEFORE INSERT ON comprobantes FOR EACH ROW
         BEGIN
             DECLARE horas_permanencia INT;
             DECLARE tarifa_hora INT;

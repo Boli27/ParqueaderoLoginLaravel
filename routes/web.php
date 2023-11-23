@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\VehiculosController;
+use App\Http\Controllers\ComprobanteController;
+use App\Http\Controllers\TarifasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +26,11 @@ Route::get('/editar/{id}', [VehiculosController::class, 'vereditar'])->name('Sho
 Route::patch('/editar/{id}', [VehiculosController::class, 'editar'])->name('Updatevehiculos');
 
 Route::delete('/eliminar/{id}', [VehiculosController::class, 'borrar'])->name('Deletevehiculo');
+
+//comprobante 
+Route::post('/comprobante/{id}', [ComprobanteController::class, 'CrearComprobante'])->name('GenerateComprobante');
+Route::get('/vercomprobante/{id}', [ComprobanteController::class, 'VerComprobante'])->name('ShowComprobante');
+
+//tarifas
+Route::get('/editarTarifa', [TarifasController::class, 'show'])->name('ShowEditTarifas');
+Route::patch('/editarTarifa', [TarifasController::class, 'edit'])->name('EditTarifas');

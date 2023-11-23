@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comprobante', function (Blueprint $table) {
+        Schema::create('comprobantes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_vehiculo')->unique();
             $table->unsignedBigInteger('id_tarifa');

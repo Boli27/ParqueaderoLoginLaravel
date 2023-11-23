@@ -100,20 +100,24 @@
                         </td>
                         <!-- botones donde llamamos a nuestras funcionalidades -->
                         <td>
-                            <a href="" class="btn btn-secondary">
-                                <i class="fas fa-receipt"> Generar Comprobante</i>
-                            </a>
-                            <a href="" class="btn btn-secondary">
-                                <i class="fa-solid fa-eye"> Ver Comprobante</i>
-                            </a>
-                            <a href="{{ route('ShowEditvehiculos', ['id' => $vehiculo->id]) }}"
-                                class="btn btn-secondary">
-                                <i class="fa-solid fa-pen-to-square">Editar</i>
+                            <form action="{{ route('GenerateComprobante', ['id' => $vehiculo->id]) }}" method="POST">
+                                @csrf
+                                <button class="btn btn-secondary btn-sm"><i class="fas fa-receipt"></i>Generar
+                                    Comprobante</button>
+                            </form>
+                            <form action="{{ route('ShowComprobante', ['id' => $vehiculo->id]) }}" method="GET">
+                                @csrf
+                                <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-eye"></i>Ver
+                                    Comprobante</button>
+                            </form>
+                            <a href="{{ route('ShowEditvehiculos', ['id' => $vehiculo->id]) }}">
+                                <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-pen-to-square"></i>Editar</button> 
                             </a>
                             <form action="{{ route('Deletevehiculo', ['id' => $vehiculo->id]) }}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i>Eliminar</button>
+                                <button class="btn btn-danger btn-sm"><i
+                                        class="fa-solid fa-trash-can"></i>Eliminar</button>
                             </form>
                         </td>
                     </tr>
