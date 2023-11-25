@@ -3,6 +3,11 @@
 use App\Http\Controllers\VehiculosController;
 use App\Http\Controllers\ComprobanteController;
 use App\Http\Controllers\TarifasController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,14 +22,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('vehiculo/agregarV');
+    return view('auth/register');
 })->name('inicio');
 
-Route::post('/', [VehiculosController::class, 'insertar'])->name('Addvehiculos');
-Route::get('/', [VehiculosController::class, 'consultar'])->name('Showvehiculos');
+//user
+Route::post('/registrarUser', [RegisterController::class, 'register'])->name('register');
+Route::get('/registrarUser', [RegisterController::class, 'show'])->name('ShowRegister');
+
+Route::post('/loginUser', [LoginController::class, 'login'])->name('login');
+Route::get('/loginUser', [LoginController::class, 'show'])->name('ShowLogin');
+
+Route::get('/logout', [LogoutController::class, 'logout'])->name('Logout');
+
+
+//vehiculo
+Route::post('/registrarV', [VehiculosController::class, 'insertar'])->name('Addvehiculos');
+Route::get('/registrarV', [VehiculosController::class, 'consultar'])->name('Showvehiculos');
 Route::get('/editar/{id}', [VehiculosController::class, 'vereditar'])->name('ShowEditvehiculos');
 Route::patch('/editar/{id}', [VehiculosController::class, 'editar'])->name('Updatevehiculos');
-
 Route::delete('/eliminar/{id}', [VehiculosController::class, 'borrar'])->name('Deletevehiculo');
 
 //comprobante 

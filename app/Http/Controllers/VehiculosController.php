@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class VehiculosController extends Controller
 {
+
+    public function show (){
+        return view('vehiculo.agregarV');
+    }
     public function insertar(Request $request){
         $request->validate([
             "tipo_vehiculo"=> "required",
