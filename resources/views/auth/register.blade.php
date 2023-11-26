@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html data-bs-theme="dark">
 <head>
-    <title>Login Laravel</title>
+    <title>Register El candado</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('assets/estilo.css') }}">
 </head>
-<body class="d-flex align-items-center py-4 bg-body-tertiary">
-<div class="container col-md-3">
+<body class="d-flex align-items-center py-4 bg-body-secondary">
+<div class="container col-md-3" style="margin-top:3rem;">
 @include('alertas.messages')
 
-    <h1 class="h3 mb-3 fw-normal">Registro</h1>
+    <h1 class="h3 mb-3 fw-normal" style="text-align:center;">Registro de admin a Parqueadero El candado</h1>
     <form action="{{route('register')}}" method="POST">
         @csrf
         <!--campo de name-->
@@ -61,7 +61,7 @@
                 <button type="submit" class="btn btn-primary">
                     Registrarse
                 </button>
-                <a href="{{route('login')}}" type="button" class="btn btn-outline-danger">Regresar a login</a>
+                <a href="{{route('login')}}" type="button" class="btn btn-outline-warning">Regresar a login</a>
             </div>
         </div>
     </form>

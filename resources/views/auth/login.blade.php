@@ -2,16 +2,16 @@
 <html data-bs-theme="dark">
 
 <head>
-    <title>Login Laravel</title>
+    <title>Login El Candado</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
-<body class="d-flex align-items-center py-4 bg-body-tertiary">
-    <div class="container col-md-3">
+<body class="d-flex align-items-center py-4 bg-body-secondary">
+    <div class="container col-md-3" style="margin-top:3r">
         <form action="{{route('login')}}" method="post">
             @csrf
-            <h1 class="h3 mb-3 fw-normal">Ingreso al sistema</h1>
+            <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Login Parqueadero el candado</h1>
             @include('alertas.messages')
             <div class="form-floating">
                 <input id="email" type="text" class="form-control" name="username" placeholder="mail@mail.com">
