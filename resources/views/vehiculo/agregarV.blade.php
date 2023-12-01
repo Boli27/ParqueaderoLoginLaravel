@@ -46,12 +46,14 @@
                         </button>
                     </div>
                     @endif
+                    <p style="font-size:2rem; text-align:center;">Agregar Vehiculo</p>
+
                     <div class="form-group">
                         <label for="tipo_vehiculo" style="font-size:1rem;">Tipo de vehiculo</label>
                         <select name="tipo_vehiculo" class="form-control" autofocus>
-                            <option value="carro">Carro</option>
-                            <option value="moto">Moto</option>
-                            <option value="camion">Camion</option>
+                        @foreach ($tipo_vehiculo_dist as $diponible)
+                                <option value="{{$diponible->tipo_vehiculo}}">{{$diponible->tipo_vehiculo}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">

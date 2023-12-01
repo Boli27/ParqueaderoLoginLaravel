@@ -48,6 +48,11 @@
                     </div>
                 </form>
             </div>
+            <a href="{{route('Addvehiculos')}}" style="text-decoration: none;">
+                <button name="agregarvehiculo" class="btn btn-success btn-block" value="Crud vehiculo" style="margin-top:2rem;">Crud Vehiculo
+
+                </button>
+            </a>
         </div>
     </div>
 </div>

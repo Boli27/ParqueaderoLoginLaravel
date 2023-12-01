@@ -20,9 +20,9 @@ return new class extends Migration
     
         // Insertar datos por defecto
         DB::table('tarifas')->insert([
-            ['precio_tarifa' => 500, 'tipo_vehiculo' => 'moto'],
-            ['precio_tarifa' => 1000, 'tipo_vehiculo' => 'carro'],
-            ['precio_tarifa' => 1200, 'tipo_vehiculo' => 'camion'],
+            ['precio_tarifa' => 1000, 'tipo_vehiculo' => 'moto'],
+            ['precio_tarifa' => 1500, 'tipo_vehiculo' => 'carro'],
+            ['precio_tarifa' => 2000, 'tipo_vehiculo' => 'camion'],
         ]);
     }
 

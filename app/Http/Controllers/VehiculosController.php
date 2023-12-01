@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Vehiculo;
+use App\Models\Tarifa;
 use Illuminate\Http\Request;
 
 
@@ -32,7 +33,8 @@ class VehiculosController extends Controller
 
     public function consultar(){
         $vehiculos = Vehiculo::all(); 
-        return view('vehiculo/agregarV', ['vehiculos' => $vehiculos]); 
+        $tipo_vehiculo_dist = Tarifa::all();
+        return view('vehiculo/agregarV', ['vehiculos' => $vehiculos],['tipo_vehiculo_dist'=>$tipo_vehiculo_dist]); 
     }
 
     public function vereditar($id){

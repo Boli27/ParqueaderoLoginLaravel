@@ -6,6 +6,7 @@ use App\Http\Controllers\TarifasController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\EmpleadosController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -47,5 +48,15 @@ Route::post('/comprobante/{id}', [ComprobanteController::class, 'CrearComprobant
 Route::get('/vercomprobante/{id}', [ComprobanteController::class, 'VerComprobante'])->name('ShowComprobante');
 
 //tarifas
-Route::get('/editarTarifa', [TarifasController::class, 'show'])->name('ShowEditTarifas');
-Route::patch('/editarTarifa', [TarifasController::class, 'edit'])->name('EditTarifas');
+Route::get('/editarTarifa/{id}', [TarifasController::class, 'showedit'])->name('ShowEditTarifas');
+Route::patch('/editarTarifa/{id}', [TarifasController::class, 'edit'])->name('EditTarifas');
+Route::get('/AgregarTarifa', [TarifasController::class, 'show'])->name('ShowAddTarifas');
+Route::post('/AgregarTarifa', [TarifasController::class, 'add'])->name('AddTarifas');
+Route::delete('/eliminartarifa/{id}', [TarifasController::class, 'delete'])->name('Deletetarifa');
+
+//empleados
+Route::get('/editarempleado/{id}', [EmpleadosController::class, 'showedit'])->name('ShowEditEmpleado');
+Route::patch('/editarempleadooo/{id}', [EmpleadosController::class, 'edit'])->name('EditEmpleado');
+Route::get('/agregarempleado', [EmpleadosController::class, 'show'])->name('ShowAddEmpleado');
+Route::post('/agregarempleado', [EmpleadosController::class, 'add'])->name('AddEmpleado');
+Route::delete('/eliminarempleado/{id}', [EmpleadosController::class, 'delete'])->name('DeleteEmpleado');

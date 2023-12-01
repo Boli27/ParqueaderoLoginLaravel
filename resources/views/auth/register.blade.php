@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="{{ asset('assets/estilo.css') }}">
 </head>
 <body class="d-flex align-items-center py-4 bg-body-secondary">
-<div class="container col-md-3" style="margin-top:3rem;">
+<div class="container col-md-4" style="margin-top:3r; border: solid 2px purple; border-radius: 25px; padding:1rem;">
 @include('alertas.messages')
 
-    <h1 class="h3 mb-3 fw-normal" style="text-align:center;">Registro de admin a Parqueadero El candado</h1>
-    <form action="{{route('register')}}" method="POST">
+    <h1 class="h3 mb-3 fw-normal" style="text-align:center;">Registro de admin a Parqueadero <span style="font-size:3rem; font-weight: bold;
+            font-style: italic;"> El candado</span></h1>
+    <form action="{{route('register')}}" method="POST" >
         @csrf
         <!--campo de name-->
         <div class="form-floating">
@@ -56,14 +57,14 @@
                 
         </div>
         <!--botones-->
-        <div class="row mb-0">
-            <div class="col-md-10">
-                <button type="submit" class="btn btn-primary">
-                    Registrarse
-                </button>
-                <a href="{{route('login')}}" type="button" class="btn btn-outline-warning">Regresar a login</a>
+        <div class="text-center pt-1 mb-5 pb-1" style="margin-top:1.5rem;">
+                <button class="btn btn-primary w-100 py-2" type="submit">Registrar e Ingresar</button>
             </div>
-        </div>
+
+            <div class="d-flex align-items-center justify-content-center pb-4" >
+                <p class="mb-0 me-2">Ya estas registrado?</p>
+                <a href="{{route('login')}}" type="button" class="btn btn-outline-success">Inicia sesion</a>
+            </div>
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

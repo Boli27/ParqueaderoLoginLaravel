@@ -34,6 +34,7 @@
             text-decoration: none;
             color: black;
         }
+        
     </style>
 
 </head>
@@ -53,9 +54,12 @@
                     <a class="nav-link" href="{{route('Addvehiculos')}}">Crud Vehiculos <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link " href="{{route('ShowEditTarifas')}}">Modificar Tarifas</a>
+                    <a class="nav-link " href="{{route('ShowAddTarifas')}}">Crud Tarifas</a>
                 </li>
-                <li class="nav-item dropdown active">
+                <li class="nav-item active">
+                    <a class="nav-link " href="{{route('ShowAddEmpleado')}}">Crud Empleados</a>
+                </li>
+                <li class="nav-item dropdown active ml-auto">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         {{auth()->user()->username}}
